@@ -1,3 +1,7 @@
+.card img {
+	max-height: 120px;
+}
+
 .the-table{
 	background-color: #277714;
 	border: 5px solid #dcdcdc;
@@ -8,7 +12,7 @@
 
 .card{
 	height: 120px;
-	background-color: white;
+	background-color: #277714;
 	color: black;
 	margin: 10px;
 	width: 12.6%;

@@ -24,6 +24,7 @@ $(document).ready(function(){
 		return newDeck;
 	}
 
+	// WHEN USER CLICKS DEAL:
 	$('.deal-button').click(function(){
 		console.log("User clicked deal");
 		theDeck = shuffleDeck();
@@ -39,7 +40,67 @@ $(document).ready(function(){
 		placeCard('dealer', 1, dealersHand[0]);
 		placeCard('player', 2, playersHand[1]);
 		placeCard('dealer', 2, dealersHand[1]);
+
+		calculateTotal(playersHand, 'player');
+		calculateTotal(dealersHand, 'dealer');
 	});
+
+	// WHEN USER CLICKS HIT
+	$('.hit-button').click(function(){
+		console.log("Use clicked hit");
+		playersHand.push(theDeck.shift());
+		placeCard('player', playersHand.length, playersHand[playersHand.length-1])
+		calculateTotal(playersHand, 'player');
+	})
+
+	// WHEN USER CLICKS STAND:
+	$('.stand-button').click(function(){
+		console.log("User clicked stand");
+		// What happens to the player when they stand? Nothing.
+		// Control goes to the dealer.
+		// Rules of blackjack for dealer:
+		// -if dealer has less than 17, MUCH hit
+		// -if dealer has 17 or more, CANNOT it
+		var dealerTotal = calculateTotal(dealersHand, 'dealer');
+		// console.log(dealerTotal);
+		while(dealerTotal < 17){
+			dealersHand.push(theDeck.shift());
+			placeCard('dealer', dealersHand.length, dealersHand[dealersHand.length-1]);
+			dealerTotal = calculateTotal(dealersHand, 'dealer');
+		}
+		checkWin();
+	})
+
+	function checkWin(){
+		var playerTotal = calculateTotal(playersHand, 'player');
+		var dealerTotal = calculateTotal(dealersHand, 'dealer');
+		// if player > 21 ... player busts and loses
+		// if dealer > 21 ... dealer busts and loses
+		// if playersHand.length = 2 and playerTotal = 21 ... BLACKJACK
+		// if dealersHand.length = 2 and dealerTotal = 21 ... BLACKJACK
+		// if player > dealer ... player wins
+		// if dealer > player ... dealer wins
+		// else ... tie
+	}
+
+	function calculateTotal(hand, who){
+		// console.log(hand)
+		// init total at 0
+		var total = 0;
+		// create a temp value for this card's value
+		var thisCardValue = 0;
+		// Loop through the hand (array)
+		// Grab the number in the element and add it to the total
+		for (let i = 0; i < hand.length; i++){
+			thisCardValue = Number(hand[i].slice(0,-1)); // This is to remove the letter in the card name
+			// console.log(thisCardValue);
+			total += thisCardValue;
+		}
+		// console.log(total);
+		var classSelector = '.' + who + '-total-number';
+		$(classSelector).html(total);
+		return total;
+	}
 
 	function placeCard(who, where, cardToPlace){
 		var classSelector = '.' + who + '-cards .card-' + where; // jQuery calls things exactly like CSS
