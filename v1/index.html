@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blackjack</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Oxygen" rel="stylesheet">
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+
+<!-- Layout
+1. Create an element for our table
+1a. Make it green
+1b. Give it a white border
+2. Create an element for the dealer's hand and the player's hand
+3. Create an element for the dealer's total and the player's total
+4. Create an element for each card in each hand, maximum of 6 cards
+5. Make a deal, hit, and stand button -->
+
+	<div class="container table-skew">
+
+		<div class="row">
+			<div class="col-sm-12 the-table">
+
+				<div class="row header">
+					<h1>Blackjack</h1>
+					<div class="col-sm-2 col-sm-offset-4 dealer-total">
+						Dealer Total: <span class="dealer-total-number">0</span>
+					</div>
+					<div class="col-sm-2 player-total">
+						Player Total: <span class="player-total-number">0</span>
+					</div>
+				</div>
+
+				<div class="row">
+					<!-- This will hold the dealer total and all 6 dealer cards -->
+					<div class="col-sm-12 dealer-hand-wrapper">
+						<!-- This will hold the dealer's total (sum of all cards) -->
+						<div class="col-sm-2 dealer-cards-name">
+							Dealer Cards
+						</div>
+						<div class="col-sm-10 dealer-cards">
+							<!-- This is 10 cols wide, will divide it up -->
+							<div class="card card-1"></div>
+							<div class="card card-2"></div>
+							<div class="card card-3"></div>
+							<div class="card card-4"></div>
+							<div class="card card-5"></div>
+							<div class="card card-6"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12 player-hand-wrapper">
+						<div class="col-sm-2 player-cards-name">
+							Player Cards
+						</div>
+						<div class="col-sm-10 player-cards">
+							<div class="card card-1"></div>
+							<div class="card card-2"></div>
+							<div class="card card-3"></div>
+							<div class="card card-4"></div>
+							<div class="card card-5"></div>
+							<div class="card card-6"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-4 col-sm-offset-4 user-buttons">
+						<button class="btn btn-warning deal-button">Deal</button>
+						<button class="btn btn-warning hit-button">Hit</button>
+						<button class="btn btn-warning stand-button">Stand</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

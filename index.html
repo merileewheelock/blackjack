@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Blackjack</title>
+	<title></title>
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -12,39 +12,47 @@
 </head>
 <body>
 
-<!-- Layout
-1. Create an element for our table
-1a. Make it green
-1b. Give it a white border
-2. Create an element for the dealer's hand and the player's hand
-3. Create an element for the dealer's total and the player's total
-4. Create an element for each card in each hand, maximum of 6 cards
-5. Make a deal, hit, and stand button -->
-
 	<div class="container">
 
-		<div class="row">
-			<div class="col-sm-12 the-table">
+		<div class="row text-center header">
+			<h1>Blackjack</h1>
+			<div class="current-game">
+				<div class="col-sm-2 col-sm-offset-4 dealer-total">
+					Dealer Total: <span class="dealer-total-number">0</span>
+				</div>
+				<div class="col-sm-2 player-total">
+					Player Total: <span class="player-total-number">0</span>
+				</div>
+			</div>
 
-				<div class="row header">
-					<h1>Blackjack</h1>
-					<div class="col-sm-2 col-sm-offset-4 dealer-total">
-						Dealer Total: <span class="dealer-total-number">0</span>
-					</div>
-					<div class="col-sm-2 player-total">
-						Player Total: <span class="player-total-number">0</span>
-					</div>
+			<div class="col-sm-4 col-sm-offset-4 text-center user-buttons">
+				<button class="deal-button btn btn-warning">Deal</button>
+				<button class="hit-button btn btn-warning">Hit</button>
+				<button class="stand-button btn btn-warning">Stand</button>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12 text-center message">&nbsp;</div>
+			</div>
+		</div>
+
+		<div class="row table-skew">
+
+			<!-- Set up an element to hold the table -->
+			<div class="the-table col-sm-12">
+
+				<div class="col-sm-2 col-sm-offset-5 text-center card-deck">
+					<img src="images/deck.png" />
 				</div>
 
+				<!-- All the dealer's stuff -->
 				<div class="row">
-					<!-- This will hold the dealer total and all 6 dealer cards -->
 					<div class="col-sm-12 dealer-hand-wrapper">
-						<!-- This will hold the dealer's total (sum of all cards) -->
-						<div class="col-sm-2 dealer-cards-name">
-							Dealer Cards
+						<!-- Dealer Total & Dealer Cards (6 max) -->
+						<div class="col-sm-2 dealer-total">
+							<!-- Dealer Cards -->
 						</div>
 						<div class="col-sm-10 dealer-cards">
-							<!-- This is 10 cols wide, will divide it up -->
 							<div class="card card-1"></div>
 							<div class="card card-2"></div>
 							<div class="card card-3"></div>
@@ -55,10 +63,12 @@
 					</div>
 				</div>
 
+				<!-- All the player's stuff -->
 				<div class="row">
 					<div class="col-sm-12 player-hand-wrapper">
-						<div class="col-sm-2 player-cards-name">
-							Player Cards
+						<!-- Player Total & Player Cards (6 max) -->
+						<div class="col-sm-2 player-total">
+							<!-- Player Cards -->
 						</div>
 						<div class="col-sm-10 player-cards">
 							<div class="card card-1"></div>
@@ -72,13 +82,11 @@
 				</div>
 
 				<div class="row">
-					<div class="col-sm-4 col-sm-offset-4 user-buttons">
-						<button class="btn btn-warning deal-button">Deal</button>
-						<button class="btn btn-warning hit-button">Hit</button>
-						<button class="btn btn-warning stand-button">Stand</button>
+					<div class="col-sm-2 col-sm-offset-5 text-center">
+						Money remaining: $<span class="money">100</span>
 					</div>
 				</div>
-			</div>
+
 		</div>
 	</div>
 

@@ -1,0 +1,51 @@
+*{
+	font-family: 'Oxygen', sans-serif;
+	color: white;
+	font-size: 20px;
+}
+
+body{
+	background-color: black;
+}
+
+.header{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+h1{
+	font-family: 'Montserrat Subrayada', sans-serif;
+	font-size: 80px;
+}
+
+.the-table{
+	background-color: #277714;
+	border: 5px solid #3D210C;
+	border-bottom: 20px solid #3D210C;
+	border-radius: 20px 20px 50% 50%;
+	margin-top: 50px;
+	padding: 30px 0px;
+	transform: rotateX(45deg);
+}
+
+.table-skew{
+	perspective: 30em;
+}
+
+.card{
+	height: 120px;
+	/* background-color: #277714; */
+	color: black;
+	margin: 10px;
+	width: 12.6%;
+	float: left;
+}
+
+.card img {
+	max-height: 120px;
+}
+
+.user-buttons{
+	text-align: center;
+	margin-top: 20px;
+}
