@@ -33,17 +33,19 @@ img{
 }
 
 .the-table{
-	background-color: #277714;
+	/* background-color: #277714; */
+	background: url('https://s-media-cache-ak0.pinimg.com/originals/db/09/a0/db09a0052a7c021eef4f639ec68c069c.jpg');
 	border: 5px solid #482421;
 	border-bottom: 30px solid #482421;
 	border-radius: 20px 20px 50% 50%;
-	padding: 60px 0px 30px 0px;
+	padding: 30px 0px 30px 0px;
 	transform: rotateX(45deg);
 	/* position: absolute; */
 }
 
 .table-skew{
 	perspective: 30em;
+	position: relative;
 }
 
 .card{
@@ -54,7 +56,7 @@ img{
 	float: left;
 	position: relative;
 	transition: all 1s ease;
-	bottom: 100px;
+	top: -200px;
 }
 
 .card img {
@@ -62,5 +64,5 @@ img{
 }
 
 .dealt{
-	bottom: 0px;
+	top: 0px;
 }

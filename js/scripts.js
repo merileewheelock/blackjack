@@ -32,13 +32,18 @@ $(document).ready(function(){
 		// Change the DOM to add the images
 		// placeCard(DOM name of who, card-X for slot, card value to send)
 		placeCard('player', 1, playersHand[0]);
-		placeCard('player', 2, playersHand[1]);
+		setTimeout(function(){
+			placeCard('dealer', 1, dealersHand[0]);
+		}, 1000);
+		setTimeout(function(){
+			placeCard('player', 2, playersHand[1]);
+		}, 2000);
+		setTimeout(function(){
+			placeCard('dealer', 2, dealersHand[1])
+		}, 3000);
 
-		placeCard('dealer', 1, dealersHand[0]);
-		placeCard('dealer', 2, dealersHand[1]);
-
-		calculateTotal(playersHand, 'player')
-		calculateTotal(dealersHand, 'dealer')
+		calculateTotal(playersHand, 'player');
+		calculateTotal(dealersHand, 'dealer');
 
 		// checkBlackjack();
 	})
